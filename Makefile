@@ -6,13 +6,16 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/29 19:40:46 by yfuks             #+#    #+#              #
-#    Updated: 2015/03/29 21:02:19 by yfuks            ###   ########.fr        #
+#    Updated: 2015/03/29 21:46:26 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = pong
 
-SRC = sources/*.c
+SRC =	sources/draw_all.c			\
+		sources/draw_rectangle.c 	\
+		sources/hook.c				\
+		sources/main.c				\
 
 HEAD = ./includes
 
@@ -22,11 +25,11 @@ FLAGS = -Wall -Wextra -Werror
 
 CC = clang
 
-LIB = -lmlx -framework OpenGL -framework AppKit
+LIB =  /usr/x11/lib -lmlx -framework OpenGL -framework AppKit
 
 all : $(NAME)
 
-$(NAME): 
+$(NAME):
 	$(CC) $(FLAGS) $(SRC) -I $(HEAD) -L $(LIB) -o $(NAME)
 
 clean:
