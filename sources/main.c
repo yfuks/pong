@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:21:26 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/29 23:46:04 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/29 23:53:21 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(void)
 		if ((e.win = mlx_new_window(e.mlx, W_WIDTH, W_HEIGHT, W_TITLE)))
 		{
 			init_player(&e);
-			mlx_hook(e.win, 3, 2, key_hook, &e);
+			mlx_hook(e.win, 2, (1L << 0) , key_hook, &e);
 			mlx_expose_hook(e.win, expose_hook, &e);
 			mlx_loop(e.mlx);
 		}
