@@ -6,16 +6,18 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/29 19:40:46 by yfuks             #+#    #+#              #
-#    Updated: 2015/03/29 21:46:26 by yfuks            ###   ########.fr        #
+#    Updated: 2015/03/29 23:28:32 by yfuks            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = pong
 
-SRC =	sources/draw_all.c			\
+SRC =	sources/draw.c				\
+		sources/put_pixel.c			\
 		sources/draw_rectangle.c 	\
 		sources/hook.c				\
 		sources/main.c				\
+		sources/draw_dotted.c
 
 HEAD = ./includes
 
@@ -35,7 +37,7 @@ $(NAME):
 clean:
 	/bin/rm -f $(OBJ)
 
-flcean: clean
+fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
