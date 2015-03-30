@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 04:43:42 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/30 05:00:45 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct		s_env
 	int				player_2_mouv_down;
 	t_ball			ball;
 	t_coord			coord_score_bar;
+	clock_t			clock;
 }					t_env;
 
 void				put_pixel(t_env *e, t_coord coord, int coloration);
