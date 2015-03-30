@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 02:40:08 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/30 03:07:12 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <pthread.h>
+# include <stdio.h>
 
 # define W_HEIGHT	600		// hauteur
 # define W_WIDTH	1000	// largeur

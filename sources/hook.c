@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:26:25 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 02:33:31 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 03:36:53 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ int		loop_hook(t_env *e)
 		e->coord_player_2.y++;
 	if (e->player_1_mouv_up == 1 || e->player_1_mouv_down == 1
 		|| e->player_2_mouv_up == 1 || e->player_2_mouv_down == 1)
+	{
 		draw_all(e);
-	usleep(1000);
+		usleep(1000);
+	}
 	return (0);
 }
