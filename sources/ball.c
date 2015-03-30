@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/30 04:04:52 by spariaud          #+#    #+#             */
-/*   Updated: 2015/03/30 14:57:42 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/30 15:09:31 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	move_ball(t_env *e)
 	e->ball.old_center.y = e->ball.new_center.y;
 	e->ball.new_center.x += e->ball.vitesse.x;
 	e->ball.new_center.y += e->ball.vitesse.y;
-	if (e->ball.new_center.y - 10 <= 0)
+	if (e->ball.new_center.y - 10 <= 51)
 		e->ball.vitesse.y = -e->ball.vitesse.y;
 	if (e->ball.new_center.y + 10 >= W_HEIGHT)
 		e->ball.vitesse.y = -e->ball.vitesse.y;
