@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 03:07:12 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 04:46:18 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <time.h>
 
 # define W_HEIGHT	600		// hauteur
 # define W_WIDTH	1000	// largeur
@@ -58,6 +59,7 @@ typedef struct		s_env
 	int				player_2_mouv_down;
 	t_coord			ball;
 	t_coord			coord_score_bar;
+	clock_t			clock;
 }					t_env;
 
 void				put_pixel(t_env *e, t_coord coord, int coloration);
