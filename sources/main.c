@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:21:26 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 03:25:47 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 04:32:44 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ static void	init_player(t_env *e)
 	e->score_player_2 = 0;
 }
 
+static void init_ball(t_env *e)
+{
+	e->ball.old_center.x = (W_WIDTH / 2);
+	e->ball.old_center.y = (W_HEIGHT / 2);
+	e->ball.new_center.x = e->ball.old_center.x;
+	e->ball.new_center.y = e->ball.old_center.y;
+	e->ball.vitesse.x = 2;
+	e->ball.vitesse.y = rand() % 3;
+	if (rand() % 2 == 0)
+	{
+		e->ball.vitesse.x = -e->ball.vitesse.x;
+		e->ball.vitesse.y = -e->ball.vitesse.y;
+	}
+}
+
 int		main(void)
 {
 	t_env 		e;
@@ -37,6 +52,8 @@ int		main(void)
 		if ((e.win = mlx_new_window(e.mlx, W_WIDTH, W_HEIGHT, W_TITLE)))
 		{
 			init_player(&e);
+			srand((int) time(NULL));
+			init_ball(&e);
 			mlx_do_key_autorepeatoff(e.mlx);
 			mlx_hook(e.win, 2, (1L << 0) , key_press, &e);
 			mlx_hook(e.win, 3, (1L << 1) , key_release, &e);
