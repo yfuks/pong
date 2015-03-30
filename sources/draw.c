@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:30:41 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 05:01:03 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/30 14:43:59 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	draw_all(t_env *e)
 	if (!(e->img = mlx_new_image(e->mlx, W_WIDTH, W_HEIGHT)))
 		exit(-1);
 	get_data_img(e);
-	draw_rectangle(e, e->coord_player_1, REC_HEIGHT, W_HEIGHT / 10);
-	draw_rectangle(e, e->coord_player_2, REC_HEIGHT, W_HEIGHT / 10);
+	draw_rectangle(e, e->coord_player_1, REC_WIDTH, W_HEIGHT / 10);
+	draw_rectangle(e, e->coord_player_2, REC_WIDTH, W_HEIGHT / 10);
 	draw_rectangle(e, e->coord_score_bar, W_WIDTH, 1);
 	draw_dotted(e);
 	draw_rectangle(e, e->ball.new_center, 10, 10);
@@ -34,4 +34,5 @@ void	draw_all(t_env *e)
 	draw_scores(e);
 	mlx_destroy_image(e->mlx, e->img);
 	move_ball(e);
+	physics(e);
 }

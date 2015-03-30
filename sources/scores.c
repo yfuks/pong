@@ -6,11 +6,25 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/30 00:49:47 by spariaud          #+#    #+#             */
-/*   Updated: 2015/03/30 02:27:26 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/30 14:41:36 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pong.h"
+
+void	update_score_player_2(t_env *e)
+{
+	e->score_player_2++;
+	if (e->score_player_2 >= SCORE_WIN)
+		e->is_victory = 2;
+}
+
+void	update_score_player_1(t_env *e)
+{
+	e->score_player_1++;
+	if (e->score_player_1 >= SCORE_WIN)
+		e->is_victory = 1;
+}
 
 void	draw_scores(t_env *e)
 {

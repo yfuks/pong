@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 05:28:09 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 14:49:00 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define KEY_W		13
 # define KEY_S		1
 
-# define REC_HEIGHT	10
+# define REC_WIDTH	10
 # define REC_COLOR	0xFFFFFF
 
 # define SCORE_WIN	10
@@ -58,6 +58,7 @@ typedef struct		s_env
 	int				bpp;
 	int				score_player_1;
 	int				score_player_2;
+	int				is_victory;
 	t_coord			coord_player_1;
 	t_coord			coord_player_2;
 	int				player_1_mouv_up;
@@ -78,8 +79,12 @@ void				draw_rectangle(t_env *e, t_coord coord,
 void				draw_number(t_env *e, t_coord coord, unsigned int number,
 								int size);
 void				draw_all(t_env *e);
+void				init_ball(t_env *e);
 void				draw_dotted(t_env *e);
 void				move_ball(t_env *e);
+void				physics(t_env *e);
+void				update_score_player_1(t_env *e);
+void				update_score_player_2(t_env *e);
 char				*ft_itoa(int n);
 int					expose_hook(t_env *e);
 int					key_press(int keycode, t_env *e);

@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:21:26 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 05:27:55 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 14:46:15 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	init_player(t_env *e)
 	e->coord_player_1.y = W_HEIGHT / 2 - ((W_HEIGHT / 10) / 2);
 	e->player_1_mouv_up = 0;
 	e->player_1_mouv_down = 0;
-	e->coord_player_2.x = W_WIDTH - REC_HEIGHT - 5;
+	e->coord_player_2.x = W_WIDTH - REC_WIDTH - 5;
 	e->coord_player_2.y = W_HEIGHT / 2 - ((W_HEIGHT / 10) / 2);
 	e->player_2_mouv_up = 0;
 	e->player_2_mouv_down = 0;
@@ -30,21 +30,6 @@ static void	init_player(t_env *e)
 	e->clock1 = clock();
 	e->clock2 = clock();
 	e->clock3 = clock();
-}
-
-static void init_ball(t_env *e)
-{
-	e->ball.old_center.x = (W_WIDTH / 2);
-	e->ball.old_center.y = (W_HEIGHT / 2);
-	e->ball.new_center.x = e->ball.old_center.x;
-	e->ball.new_center.y = e->ball.old_center.y;
-	e->ball.vitesse.x = 2;
-	e->ball.vitesse.y = rand() % 3;
-	if (rand() % 2 == 0)
-	{
-		e->ball.vitesse.x = -e->ball.vitesse.x;
-		e->ball.vitesse.y = -e->ball.vitesse.y;
-	}
 }
 
 int		main(void)
