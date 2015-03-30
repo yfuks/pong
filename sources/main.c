@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:21:26 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 02:24:40 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 02:39:06 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ static void	init_player(t_env *e)
 	e->coord_player_2.y = W_HEIGHT / 2 - ((W_HEIGHT / 10) / 2);
 	e->player_2_mouv_up = 0;
 	e->player_2_mouv_down = 0;
+	e->coord_score_bar.x = 0;
+	e->coord_score_bar.y = 50;
+	e->score_player_1 = 0;
+	e->score_player_2 = 0;
 }
 
 int		main(void)

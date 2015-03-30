@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 02:04:27 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 02:40:08 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # define REC_HEIGHT	10
 # define REC_COLOR	0xFFFFFF
 
+# define SCORE_WIN	10
+
 typedef struct		s_coord
 {
 	unsigned int	x;
@@ -46,6 +48,8 @@ typedef struct		s_env
 	int				sizeline;
 	int				endian;
 	int				bpp;
+	int				score_player_1;
+	int				score_player_2;
 	t_coord			coord_player_1;
 	t_coord			coord_player_2;
 	int				player_1_mouv_up;
@@ -53,15 +57,18 @@ typedef struct		s_env
 	int				player_2_mouv_up;
 	int				player_2_mouv_down;
 	t_coord			ball;
+	t_coord			coord_score_bar;
 }					t_env;
 
 void				put_pixel(t_env *e, t_coord coord, int coloration);
+void				draw_scores(t_env *e);
 void				draw_rectangle(t_env *e, t_coord coord,
 								int height, int width);
 void				draw_number(t_env *e, t_coord coord, unsigned int number,
 								int size);
 void				draw_all(t_env *e);
 void				draw_dotted(t_env *e);
+char				*ft_itoa(int n);
 int					expose_hook(t_env *e);
 int					key_press(int keycode, t_env *e);
 int					key_release(int keycode, t_env *e);

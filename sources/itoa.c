@@ -6,11 +6,12 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 16:33:14 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/10 04:14:52 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 02:39:39 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
 static void		lengths(int n, size_t *len, int *weight)
 {
