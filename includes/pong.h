@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 05:12:50 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 05:28:09 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ typedef struct		s_coord
 	unsigned int	y;
 }					t_coord;
 
+typedef	struct		s_ball
+{
+	t_coord			old_center;
+	t_coord			new_center;
+	t_coord			vitesse;
+}					t_ball;
+
 typedef struct		s_env
 {
 	void			*mlx;
@@ -57,7 +64,7 @@ typedef struct		s_env
 	int				player_1_mouv_down;
 	int				player_2_mouv_up;
 	int				player_2_mouv_down;
-	t_coord			ball;
+	t_ball			ball;
 	t_coord			coord_score_bar;
 	clock_t			clock1;
 	clock_t			clock2;
@@ -72,6 +79,7 @@ void				draw_number(t_env *e, t_coord coord, unsigned int number,
 								int size);
 void				draw_all(t_env *e);
 void				draw_dotted(t_env *e);
+void				move_ball(t_env *e);
 char				*ft_itoa(int n);
 int					expose_hook(t_env *e);
 int					key_press(int keycode, t_env *e);

@@ -6,7 +6,7 @@
 #    By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/29 19:40:46 by yfuks             #+#    #+#              #
-#    Updated: 2015/03/30 01:17:25 by spariaud         ###   ########.fr        #
+#    Updated: 2015/03/30 04:42:55 by spariaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,7 @@ SRC =	sources/draw.c				\
 		sources/draw_dotted.c		\
 		sources/scores.c			\
 		sources/itoa.c				\
+		sources/ball.c				\
 
 HEAD = ./includes
 
