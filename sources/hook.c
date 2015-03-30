@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:26:25 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 04:55:30 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 05:19:23 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,26 @@ int		key_release(int keycode, t_env *e)
 
 int		loop_hook(t_env *e)
 {
-	if ((clock() - e->clock) / (CLOCKS_PER_SEC / 35000) > 1)
+	if ((35000 * (clock() - e->clock1)) / CLOCKS_PER_SEC > 1)
 	{
-		if (e->player_1_mouv_up == 1 && (int)e->coord_player_1.y - 1 > 0)
+		if (e->player_1_mouv_up == 1 && (int)e->coord_player_1.y - 53 > 0)
 			e->coord_player_1.y -= 1;
-		if (e->player_1_mouv_down == 1 && (int)e->coord_player_1.y + 1
+		if (e->player_1_mouv_down == 1 && (int)e->coord_player_1.y + 2
 			+ W_HEIGHT / 10 < W_HEIGHT)
 			e->coord_player_1.y += 1;
-		if (e->player_2_mouv_up == 1 && (int)e->coord_player_2.y - 1 > 0)
+	}
+	if ((35000 * (clock() - e->clock2)) / CLOCKS_PER_SEC > 1)
+	{
+		if (e->player_2_mouv_up == 1 && (int)e->coord_player_2.y - 53 > 0)
 			e->coord_player_2.y -= 1;
-		if (e->player_2_mouv_down == 1 && (int)e->coord_player_2.y + 1
+		if (e->player_2_mouv_down == 1 && (int)e->coord_player_2.y + 2
 			+ W_HEIGHT / 10 < W_HEIGHT)
 			e->coord_player_2.y += 1;
-		if (e->player_1_mouv_up == 1 || e->player_1_mouv_down == 1
-			|| e->player_2_mouv_up == 1 || e->player_2_mouv_down == 1)
-		{
-			draw_all(e);
-			e->clock = clock();
-		}
+	}
+	if ((35000 * (clock() - e->clock3)) / CLOCKS_PER_SEC > 1)
+	{
+		draw_all(e);
+		e->clock3 = clock();
 	}
 	return (0);
 }

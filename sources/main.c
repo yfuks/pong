@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:21:26 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 04:46:47 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/30 05:12:55 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ static void	init_player(t_env *e)
 	e->score_player_1 = 0;
 	e->score_player_2 = 0;
 	e->img = NULL;
-	e->clock = clock();
+	e->clock1 = clock();
+	e->clock2 = clock();
+	e->clock3 = clock();
 }
 
 int		main(void)
