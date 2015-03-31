@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/30 04:04:52 by spariaud          #+#    #+#             */
-/*   Updated: 2015/03/31 19:30:57 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/31 19:31:37 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	physics(t_env *e)
 {
 	if (e->ball.new_center.x < 15)
 	{
-		if (e->ball.new_center.y > e->coord_player_1.y -10 &&
+		if (e->ball.new_center.y > e->coord_player_1.y - 10 &&
 			e->ball.new_center.y < e->coord_player_1.y + ((W_HEIGHT / 10) / 2))
 		{
 			e->ball.vitesse.x = -e->ball.vitesse.x;
