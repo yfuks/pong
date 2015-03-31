@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:05:10 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/30 14:49:00 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/31 19:34:46 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <stdio.h>
 # include <time.h>
 
-# define W_HEIGHT	600		// hauteur
-# define W_WIDTH	1000	// largeur
+# define W_HEIGHT	600
+# define W_WIDTH	1000
 # define W_TITLE	"Pong 42"
 
 # define KEY_ESC	53
