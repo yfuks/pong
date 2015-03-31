@@ -6,7 +6,7 @@
 /*   By: spariaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/30 04:04:52 by spariaud          #+#    #+#             */
-/*   Updated: 2015/03/31 17:29:57 by spariaud         ###   ########.fr       */
+/*   Updated: 2015/03/31 18:00:01 by spariaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static void physics_next(t_env *e)
 	if (e->ball.new_center.x + 10 > (W_WIDTH - 15))
 	{
 		if (e->ball.new_center.y > e->coord_player_2.y &&
-			e->ball.new_center.y < e->coord_player_2.y + ((W_HEIGHT / 10) / 2))
+			e->ball.new_center.y < e->coord_player_2.y + ((W_HEIGHT / 10) / 2) - 10)
 		{
 			e->ball.vitesse.x = -e->ball.vitesse.x;
 			e->ball.vitesse.y = -rand() % 6;
 		}
 		else if (e->ball.new_center.y > e->coord_player_2.y &&
-			e->ball.new_center.y < e->coord_player_2.y + ((W_HEIGHT / 10) / 2) * 2)
+				 e->ball.new_center.y < e->coord_player_2.y + (((W_HEIGHT / 10) / 2) * 2) + 10)
 		{
 			e->ball.vitesse.x = -e->ball.vitesse.x;
 			e->ball.vitesse.y = rand() % 6;
@@ -39,16 +39,16 @@ static void physics_next(t_env *e)
 
 void	physics(t_env *e)
 {
-	if (e->ball.new_center.x - 15 <= REC_WIDTH)
+	if (e->ball.new_center.x < 15)
 	{
 		if (e->ball.new_center.y > e->coord_player_1.y &&
-			e->ball.new_center.y < e->coord_player_1.y + ((W_HEIGHT / 10) / 2))
+			e->ball.new_center.y < e->coord_player_1.y + ((W_HEIGHT / 10) / 2) - 10)
 		{
 			e->ball.vitesse.x = -e->ball.vitesse.x;
 			e->ball.vitesse.y = -rand() % 6;
 		}
 		else if (e->ball.new_center.y > e->coord_player_1.y &&
-			e->ball.new_center.y < e->coord_player_1.y + ((W_HEIGHT / 10) / 2 * 2))
+				 e->ball.new_center.y < e->coord_player_1.y + (((W_HEIGHT / 10) / 2 * 2) + 10))
 		{
 			e->ball.vitesse.x = -e->ball.vitesse.x;
 			e->ball.vitesse.y = rand() % 6;
