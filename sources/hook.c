@@ -6,7 +6,7 @@
 /*   By: yfuks <yfuks@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/29 21:26:25 by yfuks             #+#    #+#             */
-/*   Updated: 2015/03/31 17:01:29 by yfuks            ###   ########.fr       */
+/*   Updated: 2015/03/31 17:23:08 by yfuks            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,23 @@ int		key_release(int keycode, t_env *e)
 
 int		loop_hook(t_env *e)
 {
-	if ((35000 * (clock() - e->clock1)) / CLOCKS_PER_SEC > 1)
+	clock_t		clock_tmp;
+
+	clock_tmp = clock();
+	if ((1000 * (clock_tmp - e->clock3)) / CLOCKS_PER_SEC > 1)
 	{
+		e->clock3 = clock();
 		if (e->player_1_mouv_up == 1 && (int)e->coord_player_1.y - 56 > 0)
 			e->coord_player_1.y -= 4;
 		if (e->player_1_mouv_down == 1 && (int)e->coord_player_1.y + 5
 			+ W_HEIGHT / 10 < W_HEIGHT)
 			e->coord_player_1.y += 4;
-	}
-	if ((35000 * (clock() - e->clock2)) / CLOCKS_PER_SEC > 1)
-	{
 		if (e->player_2_mouv_up == 1 && (int)e->coord_player_2.y - 56 > 0)
 			e->coord_player_2.y -= 4;
 		if (e->player_2_mouv_down == 1 && (int)e->coord_player_2.y + 5
 			+ W_HEIGHT / 10 < W_HEIGHT)
 			e->coord_player_2.y += 4;
-	}
-	if ((20000 * (clock() - e->clock3)) / CLOCKS_PER_SEC > 1)
-	{
 		draw_all(e);
-		e->clock3 = clock();
 	}
 	return (0);
 }
